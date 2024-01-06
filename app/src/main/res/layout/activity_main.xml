@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:id="@+id/layout"
+
+    android:background="#0A3C35"
+
+    >
+    <TextView
+        android:id="@+id/IDownload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" IDownload"
+        android:fontFamily="@font/monsteragmadn"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:textColor="#bed6d5"
+        android:layout_marginBottom="30dp"/>
+
+    <EditText
+        android:id="@+id/urlEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Video URL"
+        android:layout_below="@+id/IDownload"
+        android:padding="2dp"
+        android:textColorHint="#bed6d5"
+        android:textColor="#bed6d5"
+        android:imeOptions="actionDone"
+        android:background="@drawable/edittext_border"
+        />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:layout_below="@+id/urlEditText"
+        android:layout_centerHorizontal="true"
+        android:textColor="#525e4e"
+        android:layout_marginTop="7dp"
+        android:text="Search"
+        android:onClick="onSearchButtonClick"
+        android:layout_gravity="center_horizontal"/>
+
+    <RelativeLayout
+        android:id="@+id/resultLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/searchButton"
+        android:visibility="gone"
+        android:layout_marginTop="16dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageLayout">
+            <ImageView
+                android:id="@+id/thumbnailImageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_marginBottom="8dp"/>
+            <ProgressBar
+                android:id="@+id/progressWheel"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/videoTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageLayout"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#bed6d5"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/downloadVideoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Download Video"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/videoTitleTextView"
+            android:textColor="#525e4e"
+            android:background="@drawable/button_background"
+            android:onClick="onDownloadVideoClick" />
+
+        <Button
+            android:id="@+id/downloadAudioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/downloadVideoButton"
+            android:text="Download Audio"
+            android:textColor="#525e4e"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_background"
+            android:onClick="onDownloadAudioClick" />
+    </RelativeLayout>
+
+</RelativeLayout>
